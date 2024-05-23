@@ -1,0 +1,7 @@
+@use './reset';
+
+body {
+    margin: 0;
+    padding-top: 0.01rem;
+    background-color: reset.$color-blue1;
+}
