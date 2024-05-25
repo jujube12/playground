@@ -1,1 +1,42 @@
-.main_container {}
+@use './reset';
+
+.main_container {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 0.01rem;
+}
+
+.title_wrapper {
+    width: 90%;
+    margin: auto;
+
+    >div:nth-child(1) {
+        margin: 1rem auto 2rem auto;
+        font-size: 1.2rem;
+        font-weight: 700;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.routingBox_wrapper {
+    width: 90%;
+    margin: auto;
+
+    >div {
+        width: 10rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        border-radius: 1rem;
+        background-color: white;
+        text-align: center;
+        color: reset.$color-blue4;
+
+        &:hover {
+            cursor: pointer;
+            background-color: reset.$color-blue2;
+        }
+    }
+}
