@@ -1,6 +1,6 @@
-.makeTitleImg_wrapper > canvas {
-  margin: 2rem;
-  background-color: white;
+.makeTitleImg_wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .MakeTitleImg_title {
@@ -9,4 +9,46 @@
   margin: 1rem auto;
   text-align: center;
   font-family: var(--gowun);
+}
+
+.MakeTitleImg_input {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.MakeTitleImg_input > input {
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+.MakeTitleImg_input > button {
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.MakeTitleImg_canvas {
+  width: 90%;
+  margin: 2rem auto;
+}
+.MakeTitleImg_canvas > canvas {
+  width: 100%;
+  background-color: white;
+}
+
+.MakeTitleImg_btn {
+  width: 90%;
+  margin: auto;
+}
+.MakeTitleImg_btn > div {
+  background-color: white;
+  width: 5rem;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.MakeTitleImg_btn > div:hover {
+  cursor: pointer;
+  background-color: #b9ceeb;
+  color: white;
 }/*# sourceMappingURL=function.module.css.map */

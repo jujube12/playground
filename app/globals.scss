@@ -5,3 +5,18 @@ body {
     padding-top: 0.01rem;
     background-color: reset.$color-blue1;
 }
+div {
+    box-sizing: border-box;
+}
+
+input {
+    display: block;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    border: none;
+}

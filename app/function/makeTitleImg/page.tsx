@@ -13,7 +13,7 @@ export default function MakeTitleImg() {
             let context = canvas.getContext('2d')
             if (context){
                 context.clearRect(0,0, canvas.width, canvas.height)
-                context.font = '48px selif'
+                context.font = '1rem selif'
                 context.textAlign ='center'
                 context?.fillText(text, canvas.width/2, canvas.height/2)   
             }
@@ -23,11 +23,16 @@ export default function MakeTitleImg() {
     return (
         <div className={style.makeTitleImg_wrapper}>
             <div className={style.MakeTitleImg_title}>썸네일 만들기</div>
-            <div>
+            <div className={style.MakeTitleImg_input}>
                 <input onChange={(e)=>{inputText = e.target.value}}></input>
                 <button onClick={()=>{setText(inputText)}}>입력</button>
             </div>
-            <canvas ref={canvasRef}></canvas>
+            <div className={style.MakeTitleImg_canvas}>
+                <canvas ref={canvasRef}></canvas>
+            </div>
+            <div className={style.MakeTitleImg_btn}>
+                <div>copy</div>
+            </div>
         </div>
     )
 }
