@@ -1,7 +1,10 @@
+import UseCanvas from "./canvas";
+
 export default function LearningJS() {
     return (
         <div>
-            javascript 배우기
+            <div>javascript 배우기</div>
+            <UseCanvas></UseCanvas>
         </div>
     )
 }
