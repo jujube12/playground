@@ -3,7 +3,7 @@
   height: 100%;
 }
 
-.MakeTitleImg_title {
+.makeTitleImg_title {
   width: 20rem;
   font-size: 2rem;
   margin: 1rem auto;
@@ -11,40 +11,69 @@
   font-family: var(--gowun);
 }
 
-.MakeTitleImg_input {
-  width: 60%;
+.makeTitleImg_input {
+  width: 25rem;
   margin: auto;
   display: flex;
   justify-content: space-around;
 }
-.MakeTitleImg_input > input {
+.makeTitleImg_input > input {
+  width: 15rem;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
 }
-.MakeTitleImg_input > button {
+.makeTitleImg_input > button {
+  font-family: var(--gowun);
+  width: 5rem;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
+  background-color: #b9ceeb;
+}
+.makeTitleImg_input > button:hover {
+  cursor: pointer;
+  background-color: #87a8d0;
+  color: white;
 }
 
-.MakeTitleImg_canvas {
+.makeTitleImg_canvas {
   margin: 2rem auto;
   text-align: center;
 }
 
-.MakeTitleImg_btn {
+.makeTitleImg_btn {
+  display: flex;
+  justify-content: center;
   width: 90%;
   margin: auto;
-}
-.MakeTitleImg_btn > div {
-  background-color: white;
-  width: 5rem;
-  margin: auto;
   text-align: center;
+}
+.makeTitleImg_btn > div:nth-child(3) {
   padding: 0.5rem;
+  background-color: white;
+  margin: 0 1rem;
   border-radius: 1rem;
 }
-.MakeTitleImg_btn > div:hover {
+.makeTitleImg_btn > div:nth-child(3):hover {
   cursor: pointer;
   background-color: #b9ceeb;
   color: white;
+}
+
+.makeTitleImg_changeBtn {
+  display: flex;
+  background-color: white;
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+}
+.makeTitleImg_changeBtn > div {
+  padding: 0.5rem;
+}
+.makeTitleImg_changeBtn > div:nth-child(2):hover {
+  cursor: pointer;
+  color: #b9ceeb;
+}
+.makeTitleImg_changeBtn > div:nth-child(3):hover {
+  cursor: pointer;
+  color: #b9ceeb;
 }/*# sourceMappingURL=function.module.css.map */
