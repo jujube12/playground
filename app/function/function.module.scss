@@ -1,4 +1,4 @@
-@use '../reset';
+@use "../reset";
 
 .makeTitleImg_wrapper {
     width: 100%;
@@ -17,12 +17,12 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
-    >input {
+    > input {
         width: 15rem;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
     }
-    >button {
+    > button {
         font-family: var(--gowun);
         width: 5rem;
         border-radius: 1rem;
@@ -36,45 +36,45 @@
     }
 }
 .makeTitleImg_canvas {
-    margin: 2rem auto; 
+    margin: 2rem auto;
     text-align: center;
 }
 .makeTitleImg_btn {
-    display: flex; 
+    display: flex;
     justify-content: center;
     width: 90%;
     margin: auto;
     text-align: center;
-    >div:nth-child(3) {
+    > div:nth-child(2) {
         padding: 0.5rem;
         background-color: white;
         margin: 0 1rem;
         border-radius: 1rem;
-        &:hover{
+        &:hover {
             cursor: pointer;
             background-color: reset.$color-blue2;
             color: white;
         }
     }
 }
-.makeTitleImg_changeBtn{
+.makeTitleImg_changeBtn {
     display: flex;
     background-color: white;
     margin: 0 0.5rem;
     padding: 0 0.5rem;
     border-radius: 1rem;
 
-    >div {
+    > div {
         padding: 0.5rem;
     }
 
-    >div:nth-child(2){
+    > div:nth-child(2) {
         &:hover {
             cursor: pointer;
             color: reset.$color-blue2;
         }
     }
-    >div:nth-child(3){
+    > div:nth-child(3) {
         &:hover {
             cursor: pointer;
             color: reset.$color-blue2;

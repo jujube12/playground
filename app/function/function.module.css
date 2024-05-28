@@ -47,13 +47,13 @@
   margin: auto;
   text-align: center;
 }
-.makeTitleImg_btn > div:nth-child(3) {
+.makeTitleImg_btn > div:nth-child(2) {
   padding: 0.5rem;
   background-color: white;
   margin: 0 1rem;
   border-radius: 1rem;
 }
-.makeTitleImg_btn > div:nth-child(3):hover {
+.makeTitleImg_btn > div:nth-child(2):hover {
   cursor: pointer;
   background-color: #b9ceeb;
   color: white;
