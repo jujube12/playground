@@ -45,39 +45,42 @@
     width: 90%;
     margin: auto;
     text-align: center;
-    > div:nth-child(2) {
-        padding: 0.5rem;
-        background-color: white;
-        margin: 0 1rem;
-        border-radius: 1rem;
+}
+@mixin btn() {
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+}
+.makeTitleImg_changeBtn {
+    @include btn();
+    display: flex;
+
+    > div {
+        padding: 0 0.5rem;
+    }
+
+    > div:nth-child(n + 2) {
         &:hover {
             cursor: pointer;
-            background-color: reset.$color-blue2;
-            color: white;
+            color: reset.$color-blue2;
         }
     }
 }
-.makeTitleImg_changeBtn {
-    display: flex;
-    background-color: white;
-    margin: 0 0.5rem;
-    padding: 0 0.5rem;
-    border-radius: 1rem;
+.makeTitleImg_fontBtn {
+    @include btn();
 
-    > div {
-        padding: 0.5rem;
+    &:hover {
+        cursor: pointer;
+        background-color: reset.$color-blue2;
+        color: white;
     }
-
-    > div:nth-child(2) {
-        &:hover {
-            cursor: pointer;
-            color: reset.$color-blue2;
-        }
-    }
-    > div:nth-child(3) {
-        &:hover {
-            cursor: pointer;
-            color: reset.$color-blue2;
-        }
+}
+.makeTitleImg_copyBtn {
+    @include btn();
+    &:hover {
+        cursor: pointer;
+        background-color: reset.$color-blue2;
+        color: white;
     }
 }

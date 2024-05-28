@@ -6,20 +6,20 @@ function ControlCanvas() {}
 
 export default function MakeTitleImg() {
     let inputText = "";
-
+    let font = false;
     const canvasRef = useRef(null);
     const dpr = window.devicePixelRatio;
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;
     let imgFontSize = 30;
-    function writeText(input: string, size: number) {
+    function writeText(input: string, size: number, font?: boolean) {
         if (context) {
+            console.log(context);
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.textAlign = "center";
             context.textBaseline = "middle";
             context.font = size + "px selif";
-            context?.fillText(input, canvas.width / 2, canvas.height / 2);
-            // context.scale(dpr, dpr);
+            font ? context.strokeText(input, 500 / 2, 300 / 2) : context.fillText(input, 500 / 2, 300 / 2);
         }
     }
     useEffect(() => {
@@ -31,6 +31,9 @@ export default function MakeTitleImg() {
             canvas.style.height = `300px`;
             canvas.width = 500 * dpr;
             canvas.height = 300 * dpr;
+            if (context) {
+                context.scale(dpr, dpr);
+            }
         }
     }, []);
 
@@ -57,20 +60,42 @@ export default function MakeTitleImg() {
                     <div>font size</div>
                     <div
                         onClick={() => {
-                            imgFontSize += 5;
-                            writeText(inputText, imgFontSize);
+                            if (imgFontSize >= 200) {
+                                alert("최대 폰트 사이즈입니다.");
+                            } else {
+                                imgFontSize += 5;
+                                writeText(inputText, imgFontSize);
+                            }
                         }}>
                         +
                     </div>
                     <div
                         onClick={() => {
-                            imgFontSize -= 5;
-                            writeText(inputText, imgFontSize);
+                            if (imgFontSize <= 15) {
+                                alert("최소 폰트 사이즈입니다.");
+                            } else {
+                                imgFontSize -= 5;
+                                writeText(inputText, imgFontSize);
+                            }
                         }}>
                         -
                     </div>
                 </div>
-                <div>copy</div>
+                <div className={style.makeTitleImg_fontBtn}>
+                    <div
+                        onClick={() => {
+                            if (font) {
+                                font = false;
+                                writeText(inputText, imgFontSize, font);
+                            } else {
+                                font = true;
+                                writeText(inputText, imgFontSize, font);
+                            }
+                        }}>
+                        font change
+                    </div>
+                </div>
+                <div className={style.makeTitleImg_copyBtn}>copy</div>
             </div>
         </div>
     );

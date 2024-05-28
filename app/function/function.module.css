@@ -47,33 +47,42 @@
   margin: auto;
   text-align: center;
 }
-.makeTitleImg_btn > div:nth-child(2) {
+
+.makeTitleImg_changeBtn {
   padding: 0.5rem;
   background-color: white;
-  margin: 0 1rem;
   border-radius: 1rem;
+  margin: 0 0.5rem;
+  display: flex;
 }
-.makeTitleImg_btn > div:nth-child(2):hover {
+.makeTitleImg_changeBtn > div {
+  padding: 0 0.5rem;
+}
+.makeTitleImg_changeBtn > div:nth-child(n+2):hover {
+  cursor: pointer;
+  color: #b9ceeb;
+}
+
+.makeTitleImg_fontBtn {
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+}
+.makeTitleImg_fontBtn:hover {
   cursor: pointer;
   background-color: #b9ceeb;
   color: white;
 }
 
-.makeTitleImg_changeBtn {
-  display: flex;
-  background-color: white;
-  margin: 0 0.5rem;
-  padding: 0 0.5rem;
-  border-radius: 1rem;
-}
-.makeTitleImg_changeBtn > div {
+.makeTitleImg_copyBtn {
   padding: 0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
 }
-.makeTitleImg_changeBtn > div:nth-child(2):hover {
+.makeTitleImg_copyBtn:hover {
   cursor: pointer;
-  color: #b9ceeb;
-}
-.makeTitleImg_changeBtn > div:nth-child(3):hover {
-  cursor: pointer;
-  color: #b9ceeb;
+  background-color: #b9ceeb;
+  color: white;
 }/*# sourceMappingURL=function.module.css.map */
