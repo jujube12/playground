@@ -27,12 +27,8 @@
 }
 
 .MakeTitleImg_canvas {
-  width: 90%;
   margin: 2rem auto;
-}
-.MakeTitleImg_canvas > canvas {
-  width: 100%;
-  background-color: white;
+  text-align: center;
 }
 
 .MakeTitleImg_btn {
