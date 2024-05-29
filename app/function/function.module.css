@@ -40,7 +40,7 @@
   text-align: center;
 }
 
-.makeTitleImg_btn {
+.makeTitleImg_controlBtn {
   display: flex;
   justify-content: center;
   width: 90%;
@@ -48,28 +48,44 @@
   text-align: center;
 }
 
-.makeTitleImg_changeBtn {
+.makeTitleImg_changeFontColorBtn {
   padding: 0.5rem;
   background-color: white;
   border-radius: 1rem;
   margin: 0 0.5rem;
   display: flex;
 }
-.makeTitleImg_changeBtn > div {
+
+.makeTitleImg_changeBackColorBtn {
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+.makeTitleImg_changeFontSizeBtn {
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  display: flex;
+}
+.makeTitleImg_changeFontSizeBtn > div {
   padding: 0 0.5rem;
 }
-.makeTitleImg_changeBtn > div:nth-child(n+2):hover {
+.makeTitleImg_changeFontSizeBtn > div:nth-child(n+2):hover {
   cursor: pointer;
   color: #b9ceeb;
 }
 
-.makeTitleImg_fontBtn {
+.makeTitleImg_changefontBtn {
   padding: 0.5rem;
   background-color: white;
   border-radius: 1rem;
   margin: 0 0.5rem;
 }
-.makeTitleImg_fontBtn:hover {
+.makeTitleImg_changefontBtn:hover {
   cursor: pointer;
   background-color: #b9ceeb;
   color: white;

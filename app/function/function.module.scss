@@ -39,7 +39,7 @@
     margin: 2rem auto;
     text-align: center;
 }
-.makeTitleImg_btn {
+.makeTitleImg_controlBtn {
     display: flex;
     justify-content: center;
     width: 90%;
@@ -52,7 +52,15 @@
     border-radius: 1rem;
     margin: 0 0.5rem;
 }
-.makeTitleImg_changeBtn {
+.makeTitleImg_changeFontColorBtn {
+    @include btn();
+    display: flex;
+}
+.makeTitleImg_changeBackColorBtn {
+    @include btn();
+    display: flex;
+}
+.makeTitleImg_changeFontSizeBtn {
     @include btn();
     display: flex;
 
@@ -67,7 +75,7 @@
         }
     }
 }
-.makeTitleImg_fontBtn {
+.makeTitleImg_changefontBtn {
     @include btn();
 
     &:hover {

@@ -2,23 +2,27 @@
 import { useEffect, useRef, useState } from "react";
 import style from "../function.module.css";
 
-function ControlCanvas() {}
-
 export default function MakeTitleImg() {
     let inputText = "";
     let font = false;
+    let fontColor = "#000000";
+    let backgroundColor = "#ffffff";
     const canvasRef = useRef(null);
+    const inputColorRef = useRef(null);
+    const inputBackRef = useRef(null);
     const dpr = window.devicePixelRatio;
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;
     let imgFontSize = 30;
     function writeText(input: string, size: number, font?: boolean) {
         if (context) {
-            console.log(context);
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.font = size + "px selif";
+            context.font = size + "px chakraPetch";
+            context.fillStyle = backgroundColor;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = fontColor;
             font ? context.strokeText(input, 500 / 2, 300 / 2) : context.fillText(input, 500 / 2, 300 / 2);
         }
     }
@@ -47,16 +51,51 @@ export default function MakeTitleImg() {
                     }}></input>
                 <button
                     onClick={() => {
+                        imgFontSize = 30;
+                        fontColor = "#000000";
+                        backgroundColor = "#ffffff";
+                        if (inputColorRef.current) {
+                            let a: HTMLInputElement = inputColorRef.current;
+                            a.value = "#000000";
+                        }
+                        if (inputBackRef.current) {
+                            let a: HTMLInputElement = inputBackRef.current;
+                            a.value = "#ffffff";
+                        }
                         writeText(inputText, imgFontSize);
                     }}>
                     입력
                 </button>
             </div>
+            {/* canvas */}
             <div className={style.makeTitleImg_canvas}>
-                <canvas ref={canvasRef} style={{ backgroundColor: "white" }}></canvas>
+                <canvas ref={canvasRef} style={{ backgroundColor: backgroundColor }}></canvas>
             </div>
-            <div className={style.makeTitleImg_btn}>
-                <div className={style.makeTitleImg_changeBtn}>
+            {/* control button */}
+            <div className={style.makeTitleImg_controlBtn}>
+                <div className={style.makeTitleImg_changeFontColorBtn}>
+                    <div>font color</div>
+                    <input
+                        ref={inputColorRef}
+                        type="color"
+                        defaultValue="#000000"
+                        onChange={(e) => {
+                            fontColor = e.target.value;
+                            writeText(inputText, imgFontSize);
+                        }}></input>
+                </div>
+                <div className={style.makeTitleImg_changeBackColorBtn}>
+                    <div>background color</div>
+                    <input
+                        ref={inputBackRef}
+                        type="color"
+                        defaultValue="#ffffff"
+                        onChange={(e) => {
+                            backgroundColor = e.target.value;
+                            writeText(inputText, imgFontSize);
+                        }}></input>
+                </div>
+                <div className={style.makeTitleImg_changeFontSizeBtn}>
                     <div>font size</div>
                     <div
                         onClick={() => {
@@ -81,7 +120,7 @@ export default function MakeTitleImg() {
                         -
                     </div>
                 </div>
-                <div className={style.makeTitleImg_fontBtn}>
+                <div className={style.makeTitleImg_changefontBtn}>
                     <div
                         onClick={() => {
                             if (font) {
