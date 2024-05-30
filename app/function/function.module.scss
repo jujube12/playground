@@ -3,28 +3,30 @@
 .makeTitleImg_wrapper {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .makeTitleImg_title {
     width: 20rem;
     font-size: 2rem;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     text-align: center;
     font-family: var(--gowun);
 }
 
 .makeTitleImg_input {
-    width: 25rem;
+    width: 90%;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     > input {
-        width: 15rem;
+        width: 65%;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
     }
+
     > button {
         font-family: var(--gowun);
-        width: 5rem;
+        width: 30%;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
         background-color: reset.$color-blue2;
@@ -34,13 +36,21 @@
             color: white;
         }
     }
+    @media (min-width: 768px) {
+        width: 60%;
+    }
+    @media (min-width: 1200px) {
+    }
 }
+//canvas
 .makeTitleImg_canvas {
-    margin: 2rem auto;
+    margin: 2rem auto 1rem auto;
     text-align: center;
 }
+//control button
 .makeTitleImg_controlBtn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     width: 90%;
     margin: auto;
@@ -50,15 +60,27 @@
     padding: 0.5rem;
     background-color: white;
     border-radius: 1rem;
-    margin: 0 0.5rem;
+    margin: 0.2rem 0.5rem;
+    input {
+        width: 1.2rem;
+        height: 1.2rem;
+        &::-webkit-color-swatch-wrapper {
+            padding: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
 }
 .makeTitleImg_changeFontColorBtn {
     @include btn();
     display: flex;
+    justify-content: space-around;
 }
 .makeTitleImg_changeBackColorBtn {
     @include btn();
+    font-size: 0.8rem;
     display: flex;
+    justify-content: space-around;
 }
 .makeTitleImg_changeFontSizeBtn {
     @include btn();
@@ -86,6 +108,9 @@
 }
 .makeTitleImg_copyBtn {
     @include btn();
+    width: 8rem;
+    text-align: center;
+    margin: 0.5rem auto;
     &:hover {
         cursor: pointer;
         background-color: reset.$color-blue2;

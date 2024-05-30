@@ -1,10 +1,12 @@
 @use "./reset";
 
 body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
     margin: 0;
     padding-top: 0.01rem;
     background-color: reset.$color-blue1;
-
     //드래그 방지
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -18,11 +20,14 @@ div {
 input {
     display: block;
     border: none;
+    box-sizing: border-box;
+
     &:focus {
         outline: none;
     }
 }
 
 button {
+    box-sizing: border-box;
     border: none;
 }

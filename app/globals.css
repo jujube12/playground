@@ -1,4 +1,7 @@
 body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
   margin: 0;
   padding-top: 0.01rem;
   background-color: #deecfc;
@@ -15,11 +18,13 @@ div {
 input {
   display: block;
   border: none;
+  box-sizing: border-box;
 }
 input:focus {
   outline: none;
 }
 
 button {
+  box-sizing: border-box;
   border: none;
 }/*# sourceMappingURL=globals.css.map */

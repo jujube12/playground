@@ -7,6 +7,7 @@ export default function MakeTitleImg() {
     let font = false;
     let fontColor = "#000000";
     let backgroundColor = "#ffffff";
+    let fontWeight = "500";
     const canvasRef = useRef(null);
     const inputColorRef = useRef(null);
     const inputBackRef = useRef(null);
@@ -19,7 +20,7 @@ export default function MakeTitleImg() {
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.font = size + "px chakraPetch";
+            context.font = fontWeight + " " + size + "px selif";
             context.fillStyle = backgroundColor;
             context.fillRect(0, 0, canvas.width, canvas.height);
             context.fillStyle = fontColor;
@@ -134,8 +135,8 @@ export default function MakeTitleImg() {
                         font change
                     </div>
                 </div>
-                <div className={style.makeTitleImg_copyBtn}>copy</div>
             </div>
+            <div className={style.makeTitleImg_copyBtn}>copy</div>
         </div>
     );
 }
