@@ -12,6 +12,15 @@ export default function MakeTitleImg() {
     const inputColorRef = useRef(null);
     const inputBackRef = useRef(null);
     const dpr = window.devicePixelRatio;
+
+    let canvasWidth: number;
+    if (innerWidth < 768) {
+        canvasWidth = innerWidth;
+    } else {
+        canvasWidth = 500;
+    }
+    let canvasheight = 300;
+
     let canvas: HTMLCanvasElement;
     let context: CanvasRenderingContext2D | null;
     let imgFontSize = 30;
@@ -24,7 +33,7 @@ export default function MakeTitleImg() {
             context.fillStyle = backgroundColor;
             context.fillRect(0, 0, canvas.width, canvas.height);
             context.fillStyle = fontColor;
-            font ? context.strokeText(input, 500 / 2, 300 / 2) : context.fillText(input, 500 / 2, 300 / 2);
+            font ? context.strokeText(input, canvasWidth / 2, canvasheight / 2) : context.fillText(input, canvasWidth / 2, canvasheight / 2);
         }
     }
     useEffect(() => {
@@ -32,10 +41,10 @@ export default function MakeTitleImg() {
         if (canvasRef.current) {
             canvas = canvasRef.current;
             context = canvas.getContext("2d");
-            canvas.style.width = `500px`;
-            canvas.style.height = `300px`;
-            canvas.width = 500 * dpr;
-            canvas.height = 300 * dpr;
+            canvas.style.width = canvasWidth + `px`;
+            canvas.style.height = canvasheight + `px`;
+            canvas.width = canvasWidth * dpr;
+            canvas.height = canvasheight * dpr;
             if (context) {
                 context.scale(dpr, dpr);
             }
