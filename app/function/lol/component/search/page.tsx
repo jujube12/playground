@@ -1,10 +1,17 @@
 "use client";
-import { useRouter } from "next/navigation";
 import style from "../../lol.module.css";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export default function Search() {
-    let router = useRouter();
+    useEffect(() => {
+        fetch("/api/lol/findSummoner", { method: "POST", body: JSON.stringify({ name: "name", email: "email" }) })
+            .then((r) => r.json())
+            .then((re) => console.log(re));
+    }, []);
+    const router = useRouter();
     let userName = "";
     let userTag = "";
+
     return (
         <div className={style.lol_search_wrapper}>
             <input defaultValue="" placeholder="userName" onChange={(e) => (userName = e.target.value)}></input>
