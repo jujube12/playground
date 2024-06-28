@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Chakra_Petch, Gowun_Dodum } from "next/font/google";
 
-const chakraPetch = Chakra_Petch({ weight: ["300", "500", "700"], subsets: ["latin"] });
+const chakraPetch = Chakra_Petch({ weight: ["300", "500", "700"], subsets: ["latin"], variable: "--chakra" });
 const gowunDodum = Gowun_Dodum({ weight: ["400"], subsets: ["latin"], variable: "--gowun" });
 export const metadata: Metadata = {
     title: "Create Next App",
