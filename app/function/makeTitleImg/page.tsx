@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import style from "../function.module.css";
 
 export default function MakeTitleImg() {
@@ -53,7 +53,7 @@ export default function MakeTitleImg() {
 
     return (
         <div className={style.makeTitleImg_wrapper}>
-            <div className={style.makeTitleImg_title}>썸네일 만들기</div>
+            <div className={style.makeTitleImg_title}>make text image</div>
             <div className={style.makeTitleImg_input}>
                 <input
                     onChange={(e) => {
@@ -74,7 +74,7 @@ export default function MakeTitleImg() {
                         }
                         writeText(inputText, imgFontSize);
                     }}>
-                    입력
+                    enter
                 </button>
             </div>
             {/* canvas */}

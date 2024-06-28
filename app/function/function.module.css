@@ -9,7 +9,6 @@
   font-size: 2rem;
   margin: 1rem auto 2rem auto;
   text-align: center;
-  font-family: var(--gowun);
 }
 
 .makeTitleImg_input {
@@ -24,7 +23,6 @@
   padding: 0.5rem 1rem;
 }
 .makeTitleImg_input > button {
-  font-family: var(--gowun);
   width: 30%;
   border-radius: 1rem;
   padding: 0.5rem 1rem;

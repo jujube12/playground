@@ -10,7 +10,7 @@
     font-size: 2rem;
     margin: 1rem auto 2rem auto;
     text-align: center;
-    font-family: var(--gowun);
+    // font-family: var(--gowun);  한글 폰트
 }
 
 .makeTitleImg_input {
@@ -25,7 +25,6 @@
     }
 
     > button {
-        font-family: var(--gowun);
         width: 30%;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
