@@ -7,7 +7,7 @@ export default async function SummonerAnalysis(props: UrlParam) {
     gameName = gameName.replace(/%20/g, " ");
     let riotAccounturl = "riot/account/v1/accounts/by-riot-id";
     let riotSummonerUrl = "lol/summoner/v4/summoners/by-puuid";
-
+    let riotMatchListUrl = "lol/match/v5/matches/by-puuid";
     let gamePuuid = await fetch(`${process.env.NEXT_RIOT_API_URL_ASIA}/${riotAccounturl}/${gameName}/${gameTag}?${process.env.NEXT_RIOT_API_KEY}`)
         .then((r) => r.json())
         .then((resData: AccountByGameName) => {
@@ -19,7 +19,18 @@ export default async function SummonerAnalysis(props: UrlParam) {
             return resData;
         });
 
-    console.log(await nowSeasonTimeStamp());
+    let [startTime, now] = await nowSeasonTimeStamp();
+    let weeklyTime = 86400 * 7;
+    let matchList: string[] = [];
+    while (startTime < now) {
+        let endTime = startTime + weeklyTime;
+        await fetch(`${process.env.NEXT_RIOT_API_URL_ASIA}/${riotMatchListUrl}/${gamePuuid}/ids?startTime=${startTime}&endTime=${endTime}&type=ranked&start=0&count=100&${process.env.NEXT_RIOT_API_KEY}`)
+            .then((r) => r.json())
+            .then((resData) => {
+                matchList.push(...resData);
+            });
+        startTime = endTime + 1;
+    }
     return (
         <div className={style.lol_summoner_container}>
             <BackBtn></BackBtn>
