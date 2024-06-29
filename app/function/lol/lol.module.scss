@@ -1,10 +1,5 @@
 @use "../../reset";
-.backBtn {
-    width: 1.5rem;
-    padding-right: 0.5rem;
-    text-align: center;
-    border-radius: 1rem;
-}
+
 .lol_container {
     @include reset.container();
 }
@@ -52,4 +47,32 @@
 }
 .lol_summoner_container {
     @include reset.container();
+}
+.lol_summoner_profile_wapper {
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+.lol_summoner_profile_img {
+    width: 3rem;
+    border-radius: 50%;
+    background: radial-gradient(reset.$color-blue2, reset.$color-black);
+    padding: 0.2rem;
+}
+.lol_summoner_profile_level {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    background: radial-gradient(reset.$color-blue4, reset.$color-black);
+    color: reset.$color-white;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+.lol_summoner_profile_divider {
+    width: 80%;
+    margin: 0.2rem auto;
+    height: 0.1rem;
+    background-color: reset.$color-blue4;
 }

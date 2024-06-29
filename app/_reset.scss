@@ -7,6 +7,7 @@ $color-purple2: #9692af;
 $color-mint1: #d7eaea;
 $color-mint2: #acdbdf;
 $color-white: #ffffff;
+$color-black: #000000;
 @mixin container($bg: $color-blue1) {
     width: 100vw;
     min-height: 100vh;

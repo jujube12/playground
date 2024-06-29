@@ -22,16 +22,14 @@ export default async function SummonerAnalysis(props: UrlParam) {
         <div className={style.lol_summoner_container}>
             <BackBtn></BackBtn>
             <div className={style.lol_summoner_profile_wapper}>
+                <img className={style.lol_summoner_profile_img} src={`${process.env.NEXT_RIOT_ICON_URL}/${summonerInfo.profileIconId}.png`}></img>
+                <div className={style.lol_summoner_profile_level}>{summonerInfo?.summonerLevel}</div>
                 <div>
-                    <div>icon</div>
-                    <div>{summonerInfo?.profileIconId}</div>
+                    {gameName} <span>#{gameTag}</span>
                 </div>
-                <div>
-                    {gameName} <span>{gameTag}</span>
-                </div>
-                <div>{summonerInfo?.summonerLevel}</div>
+                <div className={style.lol_summoner_profile_divider}></div>
             </div>
-            <div>hihi</div>
+            <div></div>
         </div>
     );
 }
