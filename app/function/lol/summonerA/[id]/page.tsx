@@ -1,4 +1,5 @@
 import BackBtn from "../../component/backBtn";
+import { nowSeasonTimeStamp } from "../../f";
 import style from "../../lol.module.css";
 
 export default async function SummonerAnalysis(props: UrlParam) {
@@ -18,6 +19,7 @@ export default async function SummonerAnalysis(props: UrlParam) {
             return resData;
         });
 
+    console.log(await nowSeasonTimeStamp());
     return (
         <div className={style.lol_summoner_container}>
             <BackBtn></BackBtn>
