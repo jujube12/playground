@@ -1,24 +1,32 @@
 "use client";
 import style from "../../lol.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 export default function Search() {
-    useEffect(() => {
-        fetch("/api/lol/findSummoner", { method: "POST", body: JSON.stringify({ name: "name", email: "email" }) })
-            .then((r) => r.json())
-            .then((re) => console.log(re));
-    }, []);
     const router = useRouter();
-    let userName = "";
-    let userTag = "";
+    let [gameName, setGameName] = useState("");
+    let [gameTag, setGameTag] = useState("");
+    let [checkSummoner, setCheckSummoner] = useState(false);
+    let [isExist, setIsExist] = useState(false);
+
+    useEffect(() => {
+        if (checkSummoner) {
+            fetch("/api/lol/findSummoner", { method: "POST", body: JSON.stringify({ gameName: gameName, gameTag: gameTag }) })
+                .then((r) => r.json())
+                .then((resData) => {
+                    resData ? router.push(`/function/lol/summonerA/${gameName}${[gameTag, setGameTag]}`) : setIsExist(false);
+                    setCheckSummoner(false);
+                });
+        }
+    }, [checkSummoner]);
 
     return (
         <div className={style.lol_search_wrapper}>
-            <input defaultValue="" placeholder="userName" onChange={(e) => (userName = e.target.value)}></input>
-            <input defaultValue="" placeholder="#tag" onChange={(e) => (userTag = "#" + e.target.value)}></input>
+            <input defaultValue="" placeholder="gameName" onChange={(e) => setGameName(e.target.value)}></input>
+            <input defaultValue="" placeholder="#tag" onChange={(e) => setGameTag(e.target.value)}></input>
             <button
                 onClick={() => {
-                    router.push(`/function/lol/summonerA/${userName}${userTag}`);
+                    setCheckSummoner(true);
                 }}>
                 search
             </button>
