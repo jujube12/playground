@@ -1,0 +1,47 @@
+@use "../../reset";
+
+.lol_container {
+    @include reset.container();
+}
+.lol_search_title {
+    padding: 3rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+.lol_search_wrapper {
+    width: 80%;
+    padding: 2rem 0;
+    margin: auto;
+}
+.lol_search_box {
+    input {
+        width: 100%;
+        height: 2rem;
+        padding: 0 1rem;
+        margin: 0.3rem 0;
+        border-radius: 0.5rem;
+        border: 1px solid reset.$color-blue4;
+        font-family: var(--chakra);
+    }
+    button {
+        width: 100%;
+        height: 2rem;
+        border-radius: 0.5rem;
+        color: reset.$color-white;
+        background-color: reset.$color-blue4;
+        font-family: var(--chakra);
+        &:hover {
+            background-color: reset.$color-blue3;
+        }
+    }
+}
+.lol_search_notFound {
+    margin: 3rem 0;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    color: reset.$color-white;
+    border: 3px solid reset.$color-blue3;
+    background-color: reset.$color-blue4;
+}

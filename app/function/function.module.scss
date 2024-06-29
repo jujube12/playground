@@ -3,28 +3,29 @@
 .makeTitleImg_wrapper {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .makeTitleImg_title {
     width: 20rem;
     font-size: 2rem;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     text-align: center;
-    font-family: var(--gowun);
+    // font-family: var(--gowun);  한글 폰트
 }
 
 .makeTitleImg_input {
-    width: 25rem;
+    width: 90%;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     > input {
-        width: 15rem;
+        width: 65%;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
     }
+
     > button {
-        font-family: var(--gowun);
-        width: 5rem;
+        width: 30%;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
         background-color: reset.$color-blue2;
@@ -34,50 +35,84 @@
             color: white;
         }
     }
+    @media (min-width: 768px) {
+        width: 60%;
+    }
+    @media (min-width: 1200px) {
+    }
 }
+//canvas
 .makeTitleImg_canvas {
-    margin: 2rem auto;
+    margin: 2rem auto 1rem auto;
     text-align: center;
 }
-.makeTitleImg_btn {
-    display: flex;
+//control button
+.makeTitleImg_controlBtn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     width: 90%;
     margin: auto;
     text-align: center;
-    > div:nth-child(2) {
-        padding: 0.5rem;
-        background-color: white;
-        margin: 0 1rem;
-        border-radius: 1rem;
-        &:hover {
-            cursor: pointer;
-            background-color: reset.$color-blue2;
-            color: white;
+}
+@mixin btn() {
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0.2rem 0.5rem;
+    input {
+        width: 1.2rem;
+        height: 1.2rem;
+        &::-webkit-color-swatch-wrapper {
+            padding: 0;
+            width: 1.2rem;
+            height: 1.2rem;
         }
     }
 }
-.makeTitleImg_changeBtn {
+.makeTitleImg_changeFontColorBtn {
+    @include btn();
     display: flex;
-    background-color: white;
-    margin: 0 0.5rem;
-    padding: 0 0.5rem;
-    border-radius: 1rem;
+    justify-content: space-around;
+}
+.makeTitleImg_changeBackColorBtn {
+    @include btn();
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+}
+.makeTitleImg_changeFontSizeBtn {
+    @include btn();
+    display: flex;
 
     > div {
-        padding: 0.5rem;
+        padding: 0 0.5rem;
     }
 
-    > div:nth-child(2) {
+    > div:nth-child(n + 2) {
         &:hover {
             cursor: pointer;
             color: reset.$color-blue2;
         }
     }
-    > div:nth-child(3) {
-        &:hover {
-            cursor: pointer;
-            color: reset.$color-blue2;
-        }
+}
+.makeTitleImg_changefontBtn {
+    @include btn();
+
+    &:hover {
+        cursor: pointer;
+        background-color: reset.$color-blue2;
+        color: white;
+    }
+}
+.makeTitleImg_copyBtn {
+    @include btn();
+    width: 8rem;
+    text-align: center;
+    margin: 0.5rem auto;
+    &:hover {
+        cursor: pointer;
+        background-color: reset.$color-blue2;
+        color: white;
     }
 }
