@@ -13,7 +13,8 @@
     width: 80%;
     padding: 2rem 0;
     margin: auto;
-
+}
+.lol_search_box {
     input {
         width: 100%;
         height: 2rem;
@@ -34,4 +35,13 @@
             background-color: reset.$color-blue3;
         }
     }
+}
+.lol_search_notFound {
+    margin: 3rem 0;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    color: reset.$color-white;
+    border: 3px solid reset.$color-blue3;
+    background-color: reset.$color-blue4;
 }

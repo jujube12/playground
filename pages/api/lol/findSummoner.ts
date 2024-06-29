@@ -9,7 +9,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             await fetch(`${process.env.NEXT_RIOT_API_URL}/${riotUrl}/${reqData.gameName}/${reqData.gameTag}?${process.env.NEXT_RIOT_API_KEY}`)
                 .then((r) => r.json())
                 .then((resData) => {
-                    console.log(resData);
                     if (resData.puuid) {
                         result = true;
                     }
