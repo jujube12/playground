@@ -15,7 +15,7 @@ export default function Search() {
             fetch("/api/lol/findSummoner", { method: "POST", body: JSON.stringify({ gameName: gameName, gameTag: gameTag }) })
                 .then((r) => r.json())
                 .then((resData) => {
-                    resData ? router.push(`/function/lol/summonerA/${gameName}${[gameTag, setGameTag]}`) : setIsExist(false);
+                    resData ? router.push(`/function/lol/summonerA/${gameName}-${gameTag}`) : setIsExist(false);
                     setCheckSummoner(false);
                 });
         }

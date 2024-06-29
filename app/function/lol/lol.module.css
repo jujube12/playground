@@ -1,3 +1,10 @@
+.backBtn {
+  width: 1.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
 .lol_container {
   width: 100vw;
   min-height: 100vh;
@@ -47,4 +54,11 @@
   color: #ffffff;
   border: 3px solid #87a8d0;
   background-color: #69779b;
+}
+
+.lol_summoner_container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #deecfc;
+  padding: 1rem;
 }/*# sourceMappingURL=lol.module.css.map */

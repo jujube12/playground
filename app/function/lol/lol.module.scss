@@ -1,5 +1,10 @@
 @use "../../reset";
-
+.backBtn {
+    width: 1.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+}
 .lol_container {
     @include reset.container();
 }
@@ -44,4 +49,7 @@
     color: reset.$color-white;
     border: 3px solid reset.$color-blue3;
     background-color: reset.$color-blue4;
+}
+.lol_summoner_container {
+    @include reset.container();
 }
